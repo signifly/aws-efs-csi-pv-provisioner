@@ -15,9 +15,9 @@ spec:
       serviceAccountName: aws-efs-csi-pv-provisioner
       containers:
       - name: aws-efs-csi-pv-provisioner
-        image: # put image here
+        image: ${IMAGE_ID}
         args:
-        - -file-system-id=fs-12345678 # change FS ID here
+        - -file-system-id=${EFS_FILESYSTEM_ID}
         volumeMounts:
         - mountPath: /efs
           name: efs

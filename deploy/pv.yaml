@@ -8,11 +8,8 @@ spec:
   volumeMode: Filesystem
   accessModes:
   - ReadWriteMany
-  mountOptions:
-  - tls
-  - iam
   persistentVolumeReclaimPolicy: Retain
   storageClassName: efs-sc
   csi:
     driver: efs.csi.aws.com
-    volumeHandle: fs-12345678:/ # change FS ID here
+    volumeHandle: ${EFS_FILESYSTEM_ID}
